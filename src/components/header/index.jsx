@@ -13,14 +13,16 @@ import CloseIcon from "@mui/icons-material/Close";
 
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import SelectList from "../select/select";
 
-export default function Header({}) {
+export default function Header() {
   const { register, handleSubmit, resetField } = useForm();
   const [search, setSearh] = useState("");
   const [viewAddAdres, setViewAddAdres] = useState("none");
   const [viewAccount, setViewAccount] = useState("none");
+
+  console.log(search);
 
   const openAdres = () => {
     viewAddAdres === "none" ? setViewAddAdres("flex") : setViewAddAdres("none");
@@ -73,7 +75,10 @@ export default function Header({}) {
         <div className="nav-bar-laika">
           <span className="logo">
             <Link to={"/"}>
-              <img src="https://laika.com.co/assets/home/LaikaMascotas.svg" />
+              <img
+                alt="laika"
+                src="https://laika.com.co/assets/home/LaikaMascotas.svg"
+              />
             </Link>
           </span>
           <div>
@@ -144,7 +149,6 @@ export default function Header({}) {
             </Button>
           </div>
           <div className="menu-item">
-            <img />
             <Button className="item-btn">
               Servicios
               <ExpandMoreIcon />

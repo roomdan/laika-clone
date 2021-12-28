@@ -6,7 +6,7 @@ import { SlidersResponse } from "./response/sliders.data";
 import PartnersGrid from "../../components/partners/partners";
 import ProductCard from "../../components/product/product.card";
 
-export default function Home({}) {
+export default function Home() {
   const categories = SlidersResponse;
 
   return (

@@ -9,12 +9,16 @@ export default function SlidePrincipal() {
     switch (view) {
       case 1:
         setContent(view);
+        break;
       case 2:
         setContent(view);
+        break;
       case 3:
         setContent(view);
+        break;
       case 4:
         setContent(view);
+        break;
       default:
         setContent(view);
     }
@@ -23,7 +27,7 @@ export default function SlidePrincipal() {
   return (
     <div className="sliders-contier">
       <div className="slide-item">
-        <img src={contentSliders[content].url} />
+        <img src={contentSliders[content].url} alt="laika" />
       </div>
       <div className="change-view">
         {contentSliders.map((s) => (
