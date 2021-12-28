@@ -1,0 +1,27 @@
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  align-content: center;
+  padding: 2px;
+  grid-template-rows: repeat(2, 10rem);
+  background-color: rgb(238, 238, 238);
+  gap: 2px;
+  border-radius: 0.5rem;
+
+  .partner-card {
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+
+    img {
+      width: 8rem;
+      height: 8rem;
+      transition: all 0.2s linear;
+      cursor: pointer;
+    }
+  }
+}

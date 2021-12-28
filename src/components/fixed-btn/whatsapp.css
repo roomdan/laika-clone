@@ -1,0 +1,21 @@
+.whatsapp-btn {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  border-radius: 100%;
+  height: 3rem;
+  width: 3rem;
+  background: white url(https://laika.com.co/assets/whatsapp_1.png);
+  background-position: center;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=whatsapp.css.map */

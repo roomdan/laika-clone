@@ -1,0 +1,23 @@
+.whatsapp-btn {
+  position: fixed;
+  bottom: 0.7rem;
+  right: 0.5rem;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: white;
+  box-shadow: 0 20px 50px -80px rgba(0, 0, 0, 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
+  border: solid 1px rgb(196, 196, 196);
+
+  & :first-child {
+    height: 2.5rem;
+    width: 2.5rem;
+    background: rgb(255, 255, 255)
+      url(https://laika.com.co/assets/whatsapp_1.png);
+    background-position: center;
+    background-size: cover;
+  }
+}

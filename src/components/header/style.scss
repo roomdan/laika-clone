@@ -1,0 +1,262 @@
+@import "../../sass/colors.scss";
+
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  width: 100%;
+  min-height: 4rem;
+  background-color: $laika;
+  padding-top: 1px;
+  position: fixed;
+  top: 0px;
+  transform: scale(1);
+  .local-inf {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    .resum-inf {
+      width: 50%;
+      @include flexCenter();
+      .item-rsm {
+        display: flex;
+        align-items: center;
+        color: white;
+        border-right: solid white 1px;
+        padding-right: 8px;
+        margin-left: 1rem;
+        p {
+          margin-left: 5px;
+          font-weight: bold;
+          font-size: 0.8rem;
+        }
+      }
+    }
+
+    .social-inf {
+      width: 50%;
+      @include flexCenter();
+
+      .social-items {
+        color: white;
+        padding-right: 1rem;
+        padding-left: 1rem;
+        @include flexCenter();
+        p {
+          margin-left: 5px;
+          font-weight: bold;
+          font-size: 0.8rem;
+          color: white;
+        }
+      }
+    }
+  }
+
+  .options {
+    display: flex;
+    .btn-Wout {
+      background-color: transparent;
+      color: white;
+      text-transform: none;
+      font-weight: bold;
+      font-size: 0.8rem;
+    }
+
+    .create-acount {
+      display: flex;
+      position: relative;
+      .btn-Wout-acc {
+        background-color: rgba(0, 0, 0, 0.336);
+        color: white;
+        text-transform: none;
+        font-weight: bold;
+        font-size: 0.8rem;
+      }
+      .form-comp {
+        position: absolute;
+        width: 10rem;
+        height: 6rem;
+        bottom: -6rem;
+        right: 0rem;
+        border: solid 0.5px rgba(0, 0, 0, 0.082);
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+          0 8px 10px -6px rgb(0 0 0 / 0.1);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .login-bnt {
+          margin-top: 2px;
+          background-color: $laika;
+          color: white;
+          text-transform: capitalize;
+          font-size: 0.8rem;
+          width: 90%;
+        }
+
+        div {
+          width: 90%;
+          font-size: 0.7rem;
+          margin-top: 3px;
+          font-weight: bold;
+        }
+        .create-bnt {
+          margin-top: 2px;
+          background-color: white;
+          color: $laika;
+          text-transform: capitalize;
+          font-size: 0.8rem;
+          width: 90%;
+          border-color: $laika;
+          border: solid 1px;
+        }
+      }
+    }
+
+    .btn-Wout-shop {
+      background-color: transparent;
+      color: white;
+      width: 1rem;
+      position: relative;
+      .num-prodc {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 5px;
+        right: -2px;
+        position: absolute;
+        background-color: $red;
+        padding: 1px;
+        height: 1.1rem;
+        width: 1.1rem;
+        border-radius: 100%;
+      }
+    }
+  }
+
+  nav {
+    @include flexCenter();
+    .nav-bar-laika {
+      width: 80%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .search-p {
+        width: 45vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $laika;
+        .search-box {
+          width: 100%;
+          background-color: white;
+          border-radius: 0.5rem;
+          padding: 4px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          input {
+            width: 100%;
+            font-weight: bold;
+            color: rgba(0, 0, 0, 0.486);
+          }
+        }
+      }
+    }
+  }
+
+  .add-adres {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.452);
+    position: fixed;
+    top: 0px;
+    backdrop-filter: blur(2px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    .box-content {
+      width: calc(25% - 2rem);
+      height: 90vh;
+      padding: 1rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      background-color: white;
+      border-radius: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .handle-btn {
+        margin-top: 2rem;
+        text-transform: capitalize;
+        width: 17rem;
+        font-size: 1.1rem;
+        background: $laika;
+        color: white;
+      }
+    }
+    .add-new {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      .type-add {
+        width: 17rem;
+      }
+
+      .address-points {
+        display: flex;
+        width: 17rem;
+        margin-bottom: 1rem;
+        align-items: center;
+        font-size: 1.5rem;
+      }
+    }
+    .close-area {
+      width: calc((100% - (25% - 2rem)) / 2);
+      height: 100vh;
+    }
+  }
+
+  .menu-opts {
+    margin-top: 0.5rem;
+    width: 100%;
+    min-height: 3rem;
+    background-color: white;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+      0 8px 10px -6px rgb(0 0 0 / 0.1);
+    display: flex;
+    align-items: center;
+    .left-sect {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .menu-item {
+        display: flex;
+        align-items: center;
+
+        p {
+          color: $laika;
+          font-weight: bold;
+          margin-left: 1rem;
+        }
+        .item-btn {
+          color: $laika;
+          font-weight: bold;
+          text-transform: capitalize;
+        }
+      }
+    }
+  }
+}
