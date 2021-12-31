@@ -5,6 +5,7 @@ import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import { SlidersResponse } from "./response/sliders.data";
 import PartnersGrid from "../../components/partners/partners";
 import ProductCard from "../../components/product/product.card";
+import LaikaAbout from "../../components/laika-about/laika";
 
 export default function Home() {
   const categories = SlidersResponse;
@@ -135,6 +136,9 @@ export default function Home() {
               alt="cel"
             ></img>
           </div>
+        </section>
+        <section className="laika-inf-end">
+          <LaikaAbout />
         </section>
       </div>
     </div>

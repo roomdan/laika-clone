@@ -14,26 +14,27 @@ export default function SelectList({ items, label }) {
   };
 
   return (
-    <div>
-      <FormControl className="select-form">
-        <InputLabel id="demo-simple-select-helper-label">{label}</InputLabel>
-        <Select
-          labelId="demo-simple-select-helper-label"
-          id="demo-simple-select-helper"
-          value={age}
-          label={label}
-          onChange={handleChange}
-        >
-          <MenuItem value="">
-            <FormHelperText>Elige un valor de la lista</FormHelperText>
+    <FormControl
+      sx={{ width: "100%", mt: ".5rem", mb: ".5rem" }}
+      className="select-form"
+    >
+      <InputLabel id="demo-simple-select-helper-label">{label}</InputLabel>
+      <Select
+        labelId="demo-simple-select-helper-label"
+        id="demo-simple-select-helper"
+        value={age}
+        label={label}
+        onChange={handleChange}
+      >
+        <MenuItem value="">
+          <FormHelperText>Elige un valor de la lista</FormHelperText>
+        </MenuItem>
+        {items.map((e) => (
+          <MenuItem key={String(Math.random())} value={e.value}>
+            {e.name}
           </MenuItem>
-          {items.map((e) => (
-            <MenuItem key={String(Math.random())} value={e.value}>
-              {e.name}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-    </div>
+        ))}
+      </Select>
+    </FormControl>
   );
 }

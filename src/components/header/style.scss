@@ -11,15 +11,21 @@
   min-height: 4rem;
   background-color: $laika;
   padding-top: 1px;
-  position: fixed;
-  top: 0px;
+  padding-bottom: 0px;
+  position: static;
   transform: scale(1);
+  @media screen and(max-width:920px) {
+    padding-bottom: 10px;
+  }
   .local-inf {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 0.8rem;
+    @media screen and(max-width:920px) {
+      display: none;
+    }
     .resum-inf {
       width: 50%;
       @include flexCenter();
@@ -59,82 +65,198 @@
 
   .options {
     display: flex;
-    .btn-Wout {
-      background-color: transparent;
-      color: white;
-      text-transform: none;
-      font-weight: bold;
-      font-size: 0.8rem;
-    }
-
-    .create-acount {
+    width: 100%;
+    transition: all 0.5s linear;
+    .options-items {
       display: flex;
-      position: relative;
-      .btn-Wout-acc {
-        background-color: rgba(0, 0, 0, 0.336);
+      transition: all 0.2s linear;
+      @media screen and(max-width:920px) {
+        width: 100%;
+        display: none;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        display: none;
+        transition: all 0.2s linear;
+      }
+      .btn-Wout {
+        background-color: transparent;
         color: white;
         text-transform: none;
         font-weight: bold;
         font-size: 0.8rem;
       }
-      .form-comp {
-        position: absolute;
-        width: 10rem;
-        height: 6rem;
-        bottom: -6rem;
-        right: 0rem;
-        border: solid 0.5px rgba(0, 0, 0, 0.082);
-        background-color: rgb(255, 255, 255);
-        box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
-          0 8px 10px -6px rgb(0 0 0 / 0.1);
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        .login-bnt {
-          margin-top: 2px;
-          background-color: $laika;
-          color: white;
-          text-transform: capitalize;
-          font-size: 0.8rem;
-          width: 90%;
-        }
 
-        div {
-          width: 90%;
-          font-size: 0.7rem;
-          margin-top: 3px;
+      .create-acount {
+        display: flex;
+        position: relative;
+        .btn-Wout-acc {
+          background-color: rgba(0, 0, 0, 0.336);
+          color: white;
+          text-transform: none;
           font-weight: bold;
-        }
-        .create-bnt {
-          margin-top: 2px;
-          background-color: white;
-          color: $laika;
-          text-transform: capitalize;
           font-size: 0.8rem;
-          width: 90%;
-          border-color: $laika;
-          border: solid 1px;
+        }
+        .form-comp {
+          position: absolute;
+          width: 10rem;
+          height: 6rem;
+          bottom: -6rem;
+          right: 0rem;
+          border: solid 0.5px rgba(0, 0, 0, 0.082);
+          background-color: rgb(255, 255, 255);
+          box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+            0 8px 10px -6px rgb(0 0 0 / 0.1);
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          .login-bnt {
+            margin-top: 2px;
+            background-color: $laika;
+            color: white;
+            text-transform: capitalize;
+            font-size: 0.8rem;
+            width: 90%;
+          }
+
+          div {
+            width: 90%;
+            font-size: 0.7rem;
+            margin-top: 3px;
+            font-weight: bold;
+          }
+          .create-bnt {
+            margin-top: 2px;
+            background-color: white;
+            color: $laika;
+            text-transform: capitalize;
+            font-size: 0.8rem;
+            width: 90%;
+            border-color: $laika;
+            border: solid 1px;
+          }
+        }
+      }
+
+      .btn-Wout-shop {
+        background-color: transparent;
+        color: white;
+        width: 1rem;
+        position: relative;
+        .num-prodc {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          top: 5px;
+          right: -2px;
+          position: absolute;
+          background-color: $red;
+          padding: 1px;
+          height: 1.1rem;
+          width: 1.1rem;
+          border-radius: 100%;
         }
       }
     }
+  }
 
-    .btn-Wout-shop {
-      background-color: transparent;
-      color: white;
-      width: 1rem;
-      position: relative;
-      .num-prodc {
-        display: flex;
-        justify-content: center;
+  .options-movil {
+    display: none;
+    width: 100%;
+    transition: all 0.5s linear;
+    @media screen and(max-width:920px) {
+      display: flex;
+      width: 100%;
+    }
+    .options-items {
+      display: flex;
+      transition: all 0.2s linear;
+      @media screen and(max-width:920px) {
+        width: 100%;
+        justify-content: space-between;
         align-items: center;
-        top: 5px;
-        right: -2px;
-        position: absolute;
-        background-color: $red;
-        padding: 1px;
-        height: 1.1rem;
-        width: 1.1rem;
-        border-radius: 100%;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        transition: all 0.2s linear;
+      }
+      .btn-Wout {
+        background-color: transparent;
+        color: white;
+        text-transform: none;
+        font-weight: bold;
+        font-size: 0.8rem;
+      }
+
+      .create-acount {
+        display: flex;
+        position: relative;
+        .btn-Wout-acc {
+          background-color: rgba(0, 0, 0, 0.336);
+          color: white;
+          text-transform: none;
+          font-weight: bold;
+          font-size: 0.8rem;
+        }
+        .form-comp {
+          position: absolute;
+          width: 10rem;
+          height: 6rem;
+          bottom: -6rem;
+          right: 0rem;
+          border: solid 0.5px rgba(0, 0, 0, 0.082);
+          background-color: rgb(255, 255, 255);
+          box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+            0 8px 10px -6px rgb(0 0 0 / 0.1);
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          .login-bnt {
+            margin-top: 2px;
+            background-color: $laika;
+            color: white;
+            text-transform: capitalize;
+            font-size: 0.8rem;
+            width: 90%;
+          }
+
+          div {
+            width: 90%;
+            font-size: 0.7rem;
+            margin-top: 3px;
+            font-weight: bold;
+          }
+          .create-bnt {
+            margin-top: 2px;
+            background-color: white;
+            color: $laika;
+            text-transform: capitalize;
+            font-size: 0.8rem;
+            width: 90%;
+            border-color: $laika;
+            border: solid 1px;
+          }
+        }
+      }
+
+      .btn-Wout-shop {
+        background-color: transparent;
+        color: white;
+        width: 1rem;
+        position: relative;
+        .num-prodc {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          top: 5px;
+          right: -2px;
+          position: absolute;
+          background-color: $red;
+          padding: 1px;
+          height: 1.1rem;
+          width: 1.1rem;
+          border-radius: 100%;
+        }
       }
     }
   }
@@ -147,14 +269,47 @@
       align-items: center;
       justify-content: space-between;
 
+      @media screen and(max-width:920px) {
+        flex-direction: column;
+      }
+
+      .logo {
+        @media screen and(max-width:920px) {
+          width: 100%;
+          margin-top: 0.5rem;
+          margin-bottom: 0.5rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+
       .search-p {
         width: 45vw;
         display: flex;
         justify-content: center;
         align-items: center;
         color: $laika;
+        @media screen and(max-width:920px) {
+          width: 90vw;
+        }
+
+        .hmg-movil-btn {
+          width: 5%;
+          background-color: transparent;
+          outline: none;
+          border: none;
+          cursor: pointer;
+          display: none;
+          justify-content: center;
+          align-items: center;
+          margin: 0.5rem;
+          @media screen and(max-width:920px) {
+            display: flex;
+          }
+        }
         .search-box {
-          width: 100%;
+          width: 90%;
           background-color: white;
           border-radius: 0.5rem;
           padding: 4px;
@@ -172,12 +327,12 @@
   }
 
   .add-adres {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.452);
     position: fixed;
     top: 0px;
-    backdrop-filter: blur(2px);
+    background-color: rgba(0, 0, 0, 0.103);
+    backdrop-filter: blur(6px);
     display: none;
     justify-content: center;
     align-items: center;
@@ -192,7 +347,9 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-
+      @media screen and(max-width:920px) {
+        width: 80%;
+      }
       .handle-btn {
         margin-top: 2rem;
         text-transform: capitalize;
@@ -204,13 +361,16 @@
     }
     .add-new {
       margin-top: 1rem;
+      width: 100%;
+      min-height: 50%;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
       flex-direction: column;
 
       .type-add {
         width: 17rem;
+        margin: 1rem;
       }
 
       .address-points {
@@ -222,8 +382,11 @@
       }
     }
     .close-area {
-      width: calc((100% - (25% - 2rem)) / 2);
+      width: calc((100% - (10% - 2rem)) / 2);
       height: 100vh;
+      @media screen and(max-width:920px) {
+        width: 5%;
+      }
     }
   }
 
@@ -236,6 +399,9 @@
       0 8px 10px -6px rgb(0 0 0 / 0.1);
     display: flex;
     align-items: center;
+    @media screen and(max-width:920px) {
+      display: none;
+    }
     .left-sect {
       width: 50%;
       display: flex;

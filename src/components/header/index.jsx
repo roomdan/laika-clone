@@ -10,10 +10,13 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import SearchIcon from "@mui/icons-material/Search";
 import CloseIcon from "@mui/icons-material/Close";
+import MenuIcon from "@mui/icons-material/Menu";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import MapsHomeWorkIcon from "@mui/icons-material/MapsHomeWork";
 
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SelectList from "../select/select";
 
 export default function Header() {
@@ -21,8 +24,13 @@ export default function Header() {
   const [search, setSearh] = useState("");
   const [viewAddAdres, setViewAddAdres] = useState("none");
   const [viewAccount, setViewAccount] = useState("none");
+  const [movilMenu, setMovilMenu] = useState("none");
 
-  console.log(search);
+  useEffect(() => {
+    if (document.body.clientWidth < 920) {
+      setMovilMenu("none");
+    }
+  }, []);
 
   const openAdres = () => {
     viewAddAdres === "none" ? setViewAddAdres("flex") : setViewAddAdres("none");
@@ -86,6 +94,17 @@ export default function Header() {
               className="search-p"
               onChange={handleSubmit((e) => setSearh(e))}
             >
+              <button
+                onClick={() => {
+                  movilMenu === "none"
+                    ? setMovilMenu("flex")
+                    : setMovilMenu("none");
+                }}
+                type="button"
+                className="hmg-movil-btn"
+              >
+                <MenuIcon sx={{ color: "white" }} />
+              </button>
               <label className="search-box">
                 <SearchIcon sx={{ width: "5%", cursor: "pointer" }} />
                 <Input
@@ -104,25 +123,50 @@ export default function Header() {
             </form>
           </div>
           <div className="options">
-            <Button onClick={openAdres} className="btn-Wout">
-              Agregar dirección
-              <ExpandMoreIcon />
-            </Button>
-            <div className="create-acount">
-              <Button onClick={openAccount} className="btn-Wout-acc">
-                Crear Cuenta
+            <div className="options-items">
+              <Button onClick={openAdres} className="btn-Wout">
+                Agregar dirección
                 <ExpandMoreIcon />
               </Button>
-              <div style={{ display: viewAccount }} className="form-comp">
-                <Button className="login-bnt">Iniciar Sesion</Button>
-                <div>¿Eres nuevo Cliente</div>
-                <Button className="create-bnt">Crear Cuenta</Button>
+              <div className="create-acount">
+                <Button onClick={openAccount} className="btn-Wout-acc">
+                  Crear Cuenta
+                  <ExpandMoreIcon />
+                </Button>
+                <div style={{ display: viewAccount }} className="form-comp">
+                  <Button className="login-bnt">Iniciar Sesion</Button>
+                  <div>¿Eres nuevo Cliente</div>
+                  <Button className="create-bnt">Crear Cuenta</Button>
+                </div>
               </div>
+              <Button className="btn-Wout-shop">
+                <ShoppingBasketIcon />
+                <span className="num-prodc">0</span>
+              </Button>
             </div>
-            <Button className="btn-Wout-shop">
-              <ShoppingBasketIcon />
-              <span className="num-prodc">0</span>
-            </Button>
+          </div>
+          <div className="options-movil">
+            <div style={{ display: movilMenu }} className="options-items">
+              <Button onClick={openAdres} className="btn-Wout">
+                <MapsHomeWorkIcon />
+                <ExpandMoreIcon />
+              </Button>
+              <div className="create-acount">
+                <Button onClick={openAccount} className="btn-Wout-acc">
+                  <AccountCircleIcon />
+                  <ExpandMoreIcon />
+                </Button>
+                <div style={{ display: viewAccount }} className="form-comp">
+                  <Button className="login-bnt">Iniciar Sesion</Button>
+                  <div>¿Eres nuevo Cliente</div>
+                  <Button className="create-bnt">Crear Cuenta</Button>
+                </div>
+              </div>
+              <Button className="btn-Wout-shop">
+                <ShoppingBasketIcon />
+                <span className="num-prodc">0</span>
+              </Button>
+            </div>
           </div>
         </div>
       </nav>

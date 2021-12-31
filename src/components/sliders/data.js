@@ -1,8 +1,8 @@
 export const contentSliders = [
   {
-    url: "https://laikapp.s3.amazonaws.com/dev_images_banners/1638831302PKC-HOME-1750X300%20%281%29.jpg",
-    alt: "dog",
-    key: 0,
+    url: "https://laikapp.s3.amazonaws.com/dev_images_banners/1640636808Mesa%20de%20trabajo%201%20copia%2098%20%281%29.jpg",
+    alt: "laika",
+    key: "0",
     linkGo: "/",
   },
   {

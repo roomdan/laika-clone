@@ -9,6 +9,18 @@
   gap: 2px;
   border-radius: 0.5rem;
 
+  @media screen and(max-width:920px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-content: center;
+    padding: 2px;
+    grid-template-rows: repeat(4, 10rem);
+    background-color: rgb(238, 238, 238);
+    gap: 2px;
+    border-radius: 0.5rem;
+  }
+
   .partner-card {
     width: 100%;
     background-color: white;
@@ -21,6 +33,13 @@
       width: 8rem;
       height: 8rem;
       transition: all 0.2s linear;
+      @media screen and(max-width:920px) {
+        width: 5rem;
+        height: 5rem;
+      }
+      &:hover {
+        transform: scale(1.1);
+      }
       cursor: pointer;
     }
   }

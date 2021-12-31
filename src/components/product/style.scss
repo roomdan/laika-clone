@@ -10,6 +10,11 @@
   border: solid rgb(230, 230, 230) 1px;
   margin-right: 0.5rem;
   scroll-snap-align: center;
+  height: 90%;
+
+  @media screen and(max-width:920px) {
+    width: 60%;
+  }
 
   .product-img {
     img {
@@ -64,7 +69,7 @@
     cursor: pointer;
 
     &:hover {
-      background: $pink;
+      background: linear-gradient(45deg, $red 10%, $pink 0%);
       transition: all 0.2s linear;
     }
   }
