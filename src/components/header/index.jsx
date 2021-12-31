@@ -26,6 +26,8 @@ export default function Header() {
   const [viewAccount, setViewAccount] = useState("none");
   const [movilMenu, setMovilMenu] = useState("none");
 
+  console.log(search);
+
   useEffect(() => {
     if (document.body.clientWidth < 920) {
       setMovilMenu("none");
