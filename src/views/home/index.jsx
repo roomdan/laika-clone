@@ -35,11 +35,11 @@ export default function Home() {
             ))}
           </div>
         </section>
-        <section className="continer">
+        <section className="continer-inf">
           <div className="title-sect">
             <h2>Encuentra todo para tus peludos en un solo lugar</h2>
           </div>
-          <div className="content-section">
+          <div className="content-section-inf">
             <div className="info-card">
               <img src="https://laika.com.co/assets/home/delivery.png" alt="" />
               <h2>Entregas el mismo día</h2>

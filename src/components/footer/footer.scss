@@ -1,0 +1,153 @@
+@import "../../sass/colors.scss";
+
+* {
+  a {
+    &:link {
+      color: $laika;
+    }
+    &:visited {
+      color: $laika;
+    }
+  }
+}
+
+@mixin display($flex, $direcction, $justify, $items) {
+  display: $flex;
+  flex-direction: $direcction;
+  justify-content: $justify;
+  align-items: $items;
+}
+
+.footer {
+  width: 100%;
+  min-height: 10vh;
+  background-color: #f0f1f3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .app-info {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    @media screen and(max-width: 920px) {
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .continer-inf-footer {
+      width: 33%;
+      min-height: 5rem;
+      padding: 5px;
+      @media screen and(max-width: 920px) {
+        width: 90%;
+      }
+    }
+
+    .pay-methods {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+
+      .head-pay-methods {
+        width: 100%;
+
+        @include display(flex, row, flex-start, center);
+        .pay-message {
+          font-size: 0.8rem;
+          font-weight: bolder;
+        }
+        .lock-icon {
+          margin-left: 0.5rem;
+          @include display(flex, row, flex-start, center);
+          .secure-icon {
+            color: rgb(2, 204, 2);
+            transform: scale(0.8);
+          }
+        }
+        .ssl {
+          color: rgb(2, 204, 2);
+          font-weight: bold;
+        }
+      }
+
+      .app-certified {
+        margin-top: 0.5rem;
+        font-size: 0.7rem;
+        color: rgb(145, 145, 145);
+      }
+
+      .pay-methods-icons {
+        margin-top: 1rem;
+        width: 100%;
+        @include display(flex, row, center, center);
+        .icon-pay {
+          border: solid rgb(173, 173, 173) 1px;
+          margin-left: 1px;
+          min-height: 1.5rem;
+          @include display(flex, row, center, center);
+          img {
+            width: 2.5rem;
+          }
+        }
+      }
+    }
+
+    .protecttion-inf {
+      @include display(flex, row, center, center);
+      .shield-icon {
+        color: rgb(0, 81, 255);
+      }
+      .shield-ms {
+        color: rgba(0, 0, 0, 0.692);
+        font-size: 1rem;
+        font-weight: bold;
+      }
+    }
+
+    .downl-app {
+      @include display(flex, row, center, center);
+      flex-wrap: wrap;
+
+      .go-downolad-app {
+        img {
+          width: 8rem;
+        }
+      }
+    }
+
+    .end-app-info {
+      width: 100%;
+      @media screen and(max-width: 920px) {
+        display: none;
+      }
+      @include display(flex, column, center, center);
+      .company-data {
+        margin-top: 0.2rem;
+        color: rgba(0, 0, 0, 0.705);
+        font-size: 0.9rem;
+        a {
+          margin-left: 0.5rem;
+          margin-right: 0.5rem;
+        }
+        @include display(flex, row, center, center);
+        p {
+          margin-left: 0.5rem;
+        }
+      }
+    }
+  }
+  .end-page {
+    width: 100%;
+    padding-top: 2rem;
+    min-height: 3rem;
+    @include display(flex, column, center, center);
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: $laika;
+  }
+}
