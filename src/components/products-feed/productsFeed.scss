@@ -1,0 +1,11 @@
+.carrousel-products {
+  width: 100%;
+  overflow-x: hidden;
+  transition: all 0.2s linear;
+  .carrousel-all-products {
+    transition: all 0.2s linear;
+    width: calc(15.5rem * 11);
+    display: flex;
+    flex-wrap: nowrap;
+  }
+}

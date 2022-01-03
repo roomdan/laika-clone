@@ -1,16 +1,16 @@
 @import "../../sass/colors.scss";
 
 .a-product {
-  width: 23%;
+  width: 15rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
+  padding: 1.5rem;
   border: solid rgb(230, 230, 230) 1px;
   margin-right: 0.5rem;
   scroll-snap-align: center;
-  height: 90%;
+  height: 25rem;
 
   @media screen and(max-width:920px) {
     width: 60%;
@@ -65,12 +65,12 @@
     border-radius: 0.5rem;
     font-size: 1.2rem;
     font-weight: bold;
-    transition: all 0.2s linear;
+    transition: all 0.18s linear;
     cursor: pointer;
 
     &:hover {
-      background: linear-gradient(45deg, $red 10%, $pink 0%);
-      transition: all 0.2s linear;
+      background-color: $red;
+      transition: all 0.18s linear;
     }
   }
 }

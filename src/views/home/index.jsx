@@ -8,6 +8,7 @@ import ProductCard from "../../components/product/product.card";
 import LaikaAbout from "../../components/laika-about/laika";
 import { DownloadApp } from "../../util/responses/app.response";
 import { Link } from "react-router-dom";
+import ProductsFeed from "../../components/products-feed/productsFeed";
 
 export default function Home() {
   const categories = SlidersResponse;
@@ -77,30 +78,8 @@ export default function Home() {
           </div>
           <PartnersGrid />
         </section>
-        <section className="continer">
-          <div className="title-sect">
-            <h2>Un universo lleno de ofertas</h2>
-            <div className="action-btn">
-              <button className="back">
-                <NavigateBeforeIcon />
-              </button>
-              <button className="next">
-                <NavigateNextIcon />
-              </button>
-            </div>
-          </div>
-          <div className="product-feed">
-            <div className="product-off-list">
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
-            </div>
-          </div>
-        </section>
+
+        <ProductsFeed />
         <section className="continer">
           <div className="title-sect">
             <h2>Favoritos Laika</h2>
