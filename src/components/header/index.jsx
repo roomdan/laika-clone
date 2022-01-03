@@ -1,4 +1,4 @@
-import { Button, Input, TextField } from "@mui/material";
+import { Button, Input, TextField, Typography } from "@mui/material";
 import "./style.scss";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
@@ -13,11 +13,13 @@ import CloseIcon from "@mui/icons-material/Close";
 import MenuIcon from "@mui/icons-material/Menu";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import MapsHomeWorkIcon from "@mui/icons-material/MapsHomeWork";
+import CancelIcon from "@mui/icons-material/Cancel";
 
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
 import SelectList from "../select/select";
+import SubMenuCategories from "../submenu-categories/submenu-categories";
 
 export default function Header() {
   const { register, handleSubmit, resetField } = useForm();
@@ -25,6 +27,7 @@ export default function Header() {
   const [viewAddAdres, setViewAddAdres] = useState("none");
   const [viewAccount, setViewAccount] = useState("none");
   const [movilMenu, setMovilMenu] = useState("none");
+  const [shoppingCart, setShoppingCart] = useState("none");
 
   console.log(search);
 
@@ -36,14 +39,20 @@ export default function Header() {
 
   const openAdres = () => {
     viewAddAdres === "none" ? setViewAddAdres("flex") : setViewAddAdres("none");
+    shoppingCart === "flex" ? setShoppingCart("none") : setShoppingCart("none");
   };
   const openAccount = () => {
     viewAccount === "none" ? setViewAccount("flex") : setViewAccount("none");
+    shoppingCart === "flex" ? setShoppingCart("none") : setShoppingCart("none");
   };
 
   if (viewAccount === "flex") {
     setTimeout(openAccount, 10000);
   }
+
+  const openShopping = () => {
+    shoppingCart === "none" ? setShoppingCart("flex") : setShoppingCart("none");
+  };
 
   return (
     <header
@@ -141,10 +150,29 @@ export default function Header() {
                   <Button className="create-bnt">Crear Cuenta</Button>
                 </div>
               </div>
-              <Button className="btn-Wout-shop">
-                <ShoppingBasketIcon />
-                <span className="num-prodc">0</span>
-              </Button>
+              <div className="show-cart">
+                <Button onClick={openShopping} className="btn-Wout-shop">
+                  <ShoppingBasketIcon />
+                  <span className="num-prodc">0</span>
+                </Button>
+                <div
+                  style={{ display: shoppingCart }}
+                  className="shopping-cart-list"
+                >
+                  <div className="shopping-top">
+                    <Typography sx={{ fontWeight: "bold", ml: "1rem" }}>
+                      Tus Compras
+                    </Typography>
+                    <CancelIcon onClick={openShopping} sx={{ color: "red" }} />
+                  </div>
+                  <div className="shopping-center">El carrito está vacio</div>
+                  <div className="shopping-bottom">
+                    <Button className="go-checkout-btn">
+                      Continuar al Checkout <p>$ 0</p>
+                    </Button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div className="options-movil">
@@ -164,58 +192,34 @@ export default function Header() {
                   <Button className="create-bnt">Crear Cuenta</Button>
                 </div>
               </div>
-              <Button className="btn-Wout-shop">
-                <ShoppingBasketIcon />
-                <span className="num-prodc">0</span>
-              </Button>
+              <div className="show-cart">
+                <Button onClick={openShopping} className="btn-Wout-shop">
+                  <ShoppingBasketIcon />
+                  <span className="num-prodc">0</span>
+                </Button>
+                <div
+                  style={{ display: shoppingCart }}
+                  className="shopping-cart-list"
+                >
+                  <div className="shopping-top">
+                    <Typography sx={{ fontWeight: "bold", ml: "1rem" }}>
+                      Tus Compras
+                    </Typography>
+                    <CancelIcon onClick={openShopping} sx={{ color: "red" }} />
+                  </div>
+                  <div className="shopping-center">El carrito está vacio</div>
+                  <div className="shopping-bottom">
+                    <Button className="go-checkout-btn">
+                      Continuar al Checkout <p>$ 0</p>
+                    </Button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </nav>
-      <div className="menu-opts">
-        <div className="left-sect">
-          <div className="menu-item">
-            <img
-              src="https://laika.com.co/assets/home/dog_mc.svg"
-              alt="perro"
-            />
-            <Button className="item-btn">
-              Perro
-              <ExpandMoreIcon />
-            </Button>
-          </div>
-          <div className="menu-item">
-            <img
-              src="https://laika.com.co/assets/home/cat_mc_s.svg"
-              alt="gato"
-            />
-            <Button className="item-btn">
-              Gato
-              <ExpandMoreIcon />
-            </Button>
-          </div>
-          <div className="menu-item">
-            <Button className="item-btn">
-              Servicios
-              <ExpandMoreIcon />
-            </Button>
-          </div>
-          <div className="menu-item">
-            <p>Promociones</p>
-          </div>
-          <div className="menu-item">
-            <p>Blog</p>
-          </div>
-        </div>
-        <div className="left-sect">
-          <Link to="/">
-            <img
-              src="https://laika.com.co/assets/laika_vetcare/membership_logo.png"
-              alt="laika"
-            />
-          </Link>
-        </div>
-      </div>
+      <SubMenuCategories />
       <div style={{ display: viewAddAdres }} className="add-adres">
         <div onClick={openAdres} className="close-area"></div>
         <div className="box-content">

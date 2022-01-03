@@ -1,5 +1,12 @@
 @import "../../sass/colors.scss";
 
+@mixin display($flex, $direcction, $justify, $items) {
+  display: $flex;
+  flex-direction: $direcction;
+  justify-content: $justify;
+  align-items: $items;
+}
+
 @mixin transition($duration) {
   transition: all $duration linear;
 }
@@ -20,6 +27,7 @@ body::-webkit-scrollbar-thumb {
 
 .a-page-content {
   width: 100%;
+  max-width: 1890px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -298,7 +306,7 @@ body::-webkit-scrollbar-thumb {
   .inf-apps {
     margin-top: 3.5rem;
     width: 80%;
-    min-height: 50vh;
+    max-height: 50vh;
     border-radius: 1rem;
     display: flex;
     justify-content: center;
@@ -328,6 +336,7 @@ body::-webkit-scrollbar-thumb {
       align-items: center;
       justify-content: center;
       padding: 0.5rem;
+      position: absolute;
 
       h2 {
         position: relative;
@@ -336,14 +345,26 @@ body::-webkit-scrollbar-thumb {
       }
 
       .img-app {
-        width: 60%;
+        width: 100%;
         height: 5rem;
+        display: flex;
+        align-items: center;
+        .go-downolad-app {
+          img {
+            margin-right: 0.4rem;
+            width: 8rem;
+            transition: all 0.2s linear;
+            &:hover {
+              transition: all 0.2s linear;
+              transform: scale(1.2);
+            }
+          }
+        }
       }
     }
 
     .img-atract {
       width: 30%;
-      position: absolute;
       img {
         position: relative;
         right: -20rem;

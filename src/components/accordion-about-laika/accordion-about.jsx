@@ -5,8 +5,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Link } from "react-router-dom";
-import { Button, FormControl } from "@mui/material";
-import { Input } from "@mui/icons-material";
+import { Button, FormControl, TextField } from "@mui/material";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import Checkbox from "@mui/material/Checkbox";
 
@@ -108,7 +107,7 @@ export default function AboutMovilAccordion() {
             <p>Recibe noticias y promociones al instante.</p>
             <FormControl className="subscribe-form">
               <label className="input-send">
-                <Input sx={{ pl: "0.2rem" }} />
+                <TextField id="outlined-basic" sx={{ pl: "0.2rem" }} />
                 <Button>
                   <NavigateNextIcon />
                 </Button>

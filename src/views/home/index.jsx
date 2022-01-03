@@ -6,6 +6,8 @@ import { SlidersResponse } from "./response/sliders.data";
 import PartnersGrid from "../../components/partners/partners";
 import ProductCard from "../../components/product/product.card";
 import LaikaAbout from "../../components/laika-about/laika";
+import { DownloadApp } from "../../util/responses/app.response";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const categories = SlidersResponse;
@@ -128,7 +130,13 @@ export default function Home() {
             <h2>
               Para una mejor experiencia para ti y tu peludo descarga la app.
             </h2>
-            <div className="img-app"></div>
+            <div className="img-app">
+              {DownloadApp.map((app) => (
+                <Link className="go-downolad-app" key={app.id} to={"/"}>
+                  <img src={app.img} alt={app.alt} />
+                </Link>
+              ))}
+            </div>
           </div>
           <div className="img-atract">
             <img
